@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,5 +20,6 @@ namespace NastyFans
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
     }
 }

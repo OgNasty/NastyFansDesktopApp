@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Codeplex.Data;
+using Microsoft.CSharp;
+using System.Reflection;
 
 namespace NastyFans
 {
@@ -23,10 +25,25 @@ namespace NastyFans
         public Form1()
         {
             InitializeComponent();
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
+        static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            var dllName = new AssemblyName(args.Name).Name + ".dll";
+            var execAsm = Assembly.GetExecutingAssembly();
+            var resourceName = execAsm.GetManifestResourceNames().FirstOrDefault(s => s.EndsWith(dllName));
+            if (resourceName == null) return null;
+            using (var stream = execAsm.GetManifestResourceStream(resourceName))
+            {
+                var assbebmlyBytes = new byte[stream.Length];
+                stream.Read(assbebmlyBytes, 0, assbebmlyBytes.Length);
+                return Assembly.Load(assbebmlyBytes);
+            }
 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.BackColor = Color.FromArgb(44, 62, 80);
             panel1.BackColor = Color.FromArgb(46, 204, 113);
             panel2.BackColor = Color.FromArgb(46, 204, 113);
@@ -34,16 +51,23 @@ namespace NastyFans
             panel7.BackColor = Color.FromArgb(46, 204, 113);
             panel8.BackColor = Color.FromArgb(46, 204, 113);
             panel9.BackColor = Color.FromArgb(46, 204, 113);
+            panel10.BackColor = Color.FromArgb(46, 204, 113);
+            panel11.BackColor = Color.FromArgb(46, 204, 113);
             label1.BackColor = Color.FromArgb(39, 174, 96);
             label4.BackColor = Color.FromArgb(39, 174, 96);
             label5.BackColor = Color.FromArgb(39, 174, 96);
             label6.BackColor = Color.FromArgb(39, 174, 96);
             label7.BackColor = Color.FromArgb(39, 174, 96);
+            label17.BackColor = Color.FromArgb(39, 174, 96);
+            label20.BackColor = Color.FromArgb(39, 174, 96);
             button1.BackColor = Color.FromArgb(39, 174, 96);
             button4.BackColor = Color.FromArgb(39, 174, 96);
             button2.BackColor = Color.FromArgb(39, 174, 96);
             button3.BackColor = Color.FromArgb(39, 174, 96);
+            button6.BackColor = Color.FromArgb(39, 174, 96);
             panel3.BackColor = Color.FromArgb(39, 174, 96);
+            pictureBox1.ImageLocation = "http://langrock.org/stats/bitstamp.png";
+            pictureBox2.ImageLocation = "http://langrock.org/stats/nasty_chart.png";
             reload(true);
         }
 
@@ -62,7 +86,7 @@ namespace NastyFans
             label3.Text = "1 BTC = " + exchange + "$";
             label8.Text = ghs_mining + " GH/s";
             label9.Text = donations + " BTC Donated";
-            label10.Text = "Seat Sale: " + seatsale + " BTC";
+            label10.Text = "Seat Price: " + seatsale + " BTC";
             label11.Text = ghs_pool + " GH/s";
             label12.Text = miners + " Active Miners";
             if(!initial) { MessageBox.Show("Reload Complete", "NastyFans", MessageBoxButtons.OK); }
@@ -119,6 +143,15 @@ namespace NastyFans
         {
             button3.BackColor = Color.FromArgb(39, 174, 96);
         }
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.FromArgb(9, 144, 70);
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.FromArgb(39, 174, 96);
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -152,6 +185,30 @@ namespace NastyFans
             panel2.Visible = false;
             About about = new About();
             about.ShowDialog();
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FullscreenImage image = new FullscreenImage(pictureBox1.ImageLocation, "Bitstamp USD Chart");
+            image.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FullscreenImage image = new FullscreenImage(pictureBox2.ImageLocation, "NastyFans Seat / Bitcoin Chart");
+            image.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            Policy policy = new Policy();
+            policy.ShowDialog();
         }
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\PC\Desktop\NastyFans\src\bin\Release\WindowsApplication.exe.config
+C:\Users\PC\Desktop\NastyFans\src\bin\Release\WindowsApplication.exe
+C:\Users\PC\Desktop\NastyFans\src\bin\Release\WindowsApplication.pdb
+C:\Users\PC\Desktop\NastyFans\src\bin\Release\DynamicJson.dll
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.About.resources
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.Form1.resources
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.FullscreenImage.resources
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.Policy.resources
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.Properties.Resources.resources
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\NastyFans.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\WindowsApplication.exe
+C:\Users\PC\Desktop\NastyFans\src\obj\x86\Release\WindowsApplication.pdb

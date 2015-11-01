@@ -117,10 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label4.Text" xml:space="preserve">
-    <value>NastyFans is a group of Bitcoin enthusiasts that have a lot of fun watching and encouraging and participating in the Bitcoin world. OgNasty is a person that invests personal resources for a private mining operation called. We as enthusiasts think it is great what NASTY MINING is doing and we try to help out when possible. To coordinate our enthusiasm we created NastyFans: the unofficial fanclub of NASTY MINING. 
-
-Donations for NastyFans should be sent here: 1NastyFRkeUTmMdbMmzggDVTQA6r3ibUoX
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DynamicJson" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DynamicJson.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_8PLG1MFZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8PLG1MFZ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8PLG1MFZiii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8PLG1MFZiii.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
